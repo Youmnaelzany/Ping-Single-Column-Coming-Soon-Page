@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@/styles/globals.css";
+import "@/js/main.js";
 ---
 
 <Layout title="Frontend Mentor | Ping coming soon page">
@@ -9,5 +10,68 @@ import "@/styles/globals.css";
       <img src="/images/logo.svg" alt="logo" />
     </a>
   </header>
-  <main></main>
+  <main class="mt-10 sm:mt-8">
+    <section>
+      <div class="text-center">
+        <h1
+          class="text-5xl leading-[3.75rem] text-neutral font-light sm:text-[1.375rem] sm:leading-[2rem]"
+        >
+          We are launching <span class="text-dark-primary font-bold">soon!</span
+          >
+        </h1>
+        <h2
+          class="text-xl font-light leading-normal text-dark-primary mt-4 sm:text-xs sm:leading-normal"
+        >
+          Subscribe and get notified
+        </h2>
+      </div>
+      <div class="mt-10 flex flex-col gap-4 items-center">
+        <form action="" id="form" class="sm:flex sm:flex-col sm:gap-2">
+          <input
+            class="w-[26rem] h-[3.5rem] sm:w-[17rem] sm:h-[2.5rem] rounded-[1.75rem] border border-accent border-solid shadow-3xl placeholder:text-base placeholder:text-accent placeholder:font-light placeholder:p-6"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email address…"
+          />
+          <button
+            class="w-[12rem] h-[3.5rem] sm:w-[17rem] sm:h-[2.5rem] bg-primary text-[#fff] font-semibold rounded-[1.75rem] shadow-4xl"
+            type="submit">Notify Me</button
+          >
+        </form>
+        <!-- Error/Success message -->
+        <h3
+          id="message"
+          class="text-xs sm:text-[0.625rem] mt-2 sm:mt-0 font-normal italic leading-[1.25rem] text-red"
+        >
+          Please provide a valid email address
+        </h3>
+      </div>
+    </section>
+  </main>
+  <section class="mt-20 flex justify-center">
+    <img
+      class="w-[38rem]"
+      src="/images/illustration-dashboard.png"
+      alt="illustration-dashboard"
+    />
+  </section>
+  <footer class="mt-24 flex flex-col gap-2 items-center">
+    <div class="flex justify-center gap-2 items-center">
+      <i
+        class="fa-brands fa-facebook-f border border-accent rounded-full w-[2rem] h-[2rem] self-center justify-self-center p-2"
+        style="color: #4c7bf3;"></i>
+      <i
+        class="fa-brands fa-twitter border border-accent rounded-full w-[2rem] h-[2rem] self-center justify-self-center p-2"
+        style="color: #4c7bf3;"></i>
+      <i
+        class="fa-brands fa-instagram border border-accent rounded-full w-[2rem] h-[2rem] self-center justify-self-center p-[0.51rem]"
+        style="color: #4c7bf3;"></i>
+    </div>
+    <h3
+      class="mt-6 text-neutral text-xs leading-normal font-light sm:text-[0.625rem]"
+    >
+      &copy; Copyright Ping. All rights reserved.
+    </h3>
+  </footer>
 </Layout>
