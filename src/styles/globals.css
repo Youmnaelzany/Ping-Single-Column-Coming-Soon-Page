@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+i {
+    color: #4c7bf3
+}
+
+i:hover {
+    color: #fff;
+    background-color: #4c7bf3;
+}
+
+form,
+input,
+button {
+    font-family: inherit;
+}
 
 .attribution {
     font-size: 11px;

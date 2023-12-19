@@ -1,7 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@/styles/globals.css";
-import "@/js/main.js";
+
+const form = document.getElementById("form");
+const message = document.getElementById("message");
+
+function processFormData(e) {
+  console.log(e);
+}
+
+form.addEventListener("submit", processFormData);
 ---
 
 <Layout title="Frontend Mentor | Ping coming soon page">
@@ -25,28 +33,31 @@ import "@/js/main.js";
           Subscribe and get notified
         </h2>
       </div>
-      <div class="mt-10 flex flex-col gap-4 items-center">
-        <form action="" id="form" class="sm:flex sm:flex-col sm:gap-2">
-          <input
-            class="w-[26rem] h-[3.5rem] sm:w-[17rem] sm:h-[2.5rem] rounded-[1.75rem] border border-accent border-solid shadow-3xl placeholder:text-base placeholder:text-accent placeholder:font-light placeholder:p-6"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email address…"
-          />
-          <button
-            class="w-[12rem] h-[3.5rem] sm:w-[17rem] sm:h-[2.5rem] bg-primary text-[#fff] font-semibold rounded-[1.75rem] shadow-4xl"
-            type="submit">Notify Me</button
-          >
-        </form>
-        <!-- Error/Success message -->
-        <h3
-          id="message"
-          class="text-xs sm:text-[0.625rem] mt-2 sm:mt-0 font-normal italic leading-[1.25rem] text-red"
+      <form
+        action="php/subscribe.php"
+        class="sm:flex sm:flex-col sm:gap-2 mt-10 flex flex-row gap-2 justify-center items-center"
+        id="form"
+      >
+        <input
+          class="w-[26rem] h-[3.5rem] sm:w-[17rem] sm:h-[2.5rem] rounded-[1.75rem] border border-accent border-solid shadow-3xl placeholder:text-base placeholder:text-accent placeholder:font-light placeholder:p-6 outline-none invalid:border-red pl-6 valid:border-[#15803d] transition-all duration-75 focus:outline-none"
+          required
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your email address…"
+        />
+        <button
+          class="w-[12rem] h-[3.5rem] sm:w-[17rem] sm:h-[2.5rem] bg-primary text-[#fff] font-semibold rounded-[1.75rem] shadow-4xl cursor-pointer border-none outline-none hover:opacity-[0.75] transition-all focus:outline-none"
+          type="submit">Notify Me</button
         >
-          Please provide a valid email address
-        </h3>
-      </div>
+      </form>
+      <!-- Error/Success message -->
+      <h3
+        id="message"
+        class="text-xs sm:text-[0.625rem] mt-2 sm:mt-0 font-normal italic leading-[1.25rem] text-red text-center"
+      >
+        Please provide a valid email address
+      </h3>
     </section>
   </main>
   <section class="mt-20 flex justify-center">
@@ -57,16 +68,24 @@ import "@/js/main.js";
     />
   </section>
   <footer class="mt-24 flex flex-col gap-2 items-center">
-    <div class="flex justify-center gap-2 items-center">
+    <div class="flex gap-2">
       <i
-        class="fa-brands fa-facebook-f border border-accent rounded-full w-[2rem] h-[2rem] self-center justify-self-center p-2"
-        style="color: #4c7bf3;"></i>
+        class="fa-brands
+      fa-facebook-f
+      border
+      border-accent
+      rounded-full
+      w-[2rem]
+      h-[2rem]
+      flex justify-center items-center cursor-pointer"
+      >
+      </i>
       <i
-        class="fa-brands fa-twitter border border-accent rounded-full w-[2rem] h-[2rem] self-center justify-self-center p-2"
-        style="color: #4c7bf3;"></i>
+        class="fa-brands fa-twitter border border-accent rounded-full w-[2rem] h-[2rem] flex justify-center items-center cursor-pointer"
+      ></i>
       <i
-        class="fa-brands fa-instagram border border-accent rounded-full w-[2rem] h-[2rem] self-center justify-self-center p-[0.51rem]"
-        style="color: #4c7bf3;"></i>
+        class="fa-brands fa-instagram border border-accent rounded-full w-[2rem] h-[2rem] flex justify-center items-center cursor-pointer"
+      ></i>
     </div>
     <h3
       class="mt-6 text-neutral text-xs leading-normal font-light sm:text-[0.625rem]"
